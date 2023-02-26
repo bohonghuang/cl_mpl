@@ -1,0 +1,13 @@
+#+TITLE: ~CL_MPL~
+An experimental project for manipulating C++ templates in Lisp style.
+
+* Basic Usage
+#+BEGIN_SRC c++
+  cl_apply<std::tuple, int, cl_list<float, char>>; // => std::tuple<int, float, char>
+
+  cl_reverse<std::tuple<int, float, char>>; // => std::tuple<char, float, int>
+
+  cl_mapcar<std::pair, std::tuple<int, float, char>, std::tuple<float, char, int>>; // => std::tuple<std::pair<int, float>, std::pair<float, char>, std::pair<char, int>>
+#+END_SRC
+
+For more examples, see [[file:main.cpp]] and [[file:fib.cpp]].
